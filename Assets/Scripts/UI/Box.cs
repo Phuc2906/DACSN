@@ -6,8 +6,7 @@ using System.Collections;
 public class Box : MonoBehaviour
 {
     public string playerTag = "Player";   
-    public float delayBeforeDestroy = 0.3f; 
-    public GameObject lootPrefab;        
+    public float delayBeforeDestroy = 0.3f;       
     public Transform lootSpawnPoint;     
 
     private Animator anim;
@@ -40,12 +39,6 @@ public class Box : MonoBehaviour
         float animLength = info.length;
 
         yield return new WaitForSeconds(animLength + delayBeforeDestroy);
-
-        if (lootPrefab != null)
-        {
-            Vector3 spawnPos = lootSpawnPoint ? lootSpawnPoint.position : transform.position;
-            Instantiate(lootPrefab, spawnPos, Quaternion.identity);
-        }
 
         Destroy(gameObject);
     }

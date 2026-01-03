@@ -358,7 +358,7 @@ Canvas:
   m_GameObject: {fileID: 110387129}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -440,7 +440,7 @@ Canvas:
   m_GameObject: {fileID: 200339825}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -979,7 +979,7 @@ Canvas:
   m_GameObject: {fileID: 609810482}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1939,7 +1939,7 @@ Canvas:
   m_GameObject: {fileID: 908691709}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -2708,7 +2708,7 @@ GameObject:
   - component: {fileID: 1296940983}
   - component: {fileID: 1296940982}
   - component: {fileID: 1296940981}
-  - component: {fileID: 1296940980}
+  - component: {fileID: 1296940984}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -2736,20 +2736,6 @@ RectTransform:
   m_AnchoredPosition: {x: 140, y: 102.255}
   m_SizeDelta: {x: 154.803, y: 49.49}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1296940980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1296940978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d9ba5f7046b954d835eb7f71b12950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas_A: {fileID: 908691709}
-  Canvas_B: {fileID: 1604272051}
 --- !u!114 &1296940981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2794,9 +2780,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1296940980}
-        m_TargetAssemblyTypeName: Close, Assembly-CSharp
-        m_MethodName: CloseCanvasOnClick
+      - m_Target: {fileID: 1296940984}
+        m_TargetAssemblyTypeName: CloseCanvas, Assembly-CSharp
+        m_MethodName: Apply
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2844,6 +2830,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296940978}
   m_CullTransparentMesh: 1
+--- !u!114 &1296940984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296940978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2490f4488ab4c24a865aedb48ac243c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasToEnable:
+  - {fileID: 1604272051}
+  canvasToDisable:
+  - {fileID: 908691709}
 --- !u!1 &1394070545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3253,6 +3255,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 1535706999106922091, guid: 81a203cda15466743897350acf9a2f55, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535706999106922091, guid: 81a203cda15466743897350acf9a2f55, type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
@@ -3659,7 +3665,7 @@ GameObject:
   - component: {fileID: 1928534009}
   - component: {fileID: 1928534008}
   - component: {fileID: 1928534007}
-  - component: {fileID: 1928534006}
+  - component: {fileID: 1928534010}
   m_Layer: 5
   m_Name: Gun
   m_TagString: Untagged
@@ -3687,20 +3693,6 @@ RectTransform:
   m_AnchoredPosition: {x: -140, y: 102.255}
   m_SizeDelta: {x: 154.803, y: 49.49}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1928534006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928534004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21d9ba5f7046b954d835eb7f71b12950, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Canvas_A: {fileID: 1604272051}
-  Canvas_B: {fileID: 908691709}
 --- !u!114 &1928534007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3745,9 +3737,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1928534006}
-        m_TargetAssemblyTypeName: Close, Assembly-CSharp
-        m_MethodName: CloseCanvasOnClick
+      - m_Target: {fileID: 1928534010}
+        m_TargetAssemblyTypeName: CloseCanvas, Assembly-CSharp
+        m_MethodName: Apply
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3795,6 +3787,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928534004}
   m_CullTransparentMesh: 1
+--- !u!114 &1928534010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928534004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2490f4488ab4c24a865aedb48ac243c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasToEnable:
+  - {fileID: 908691709}
+  canvasToDisable:
+  - {fileID: 1604272051}
 --- !u!1 &2071287593
 GameObject:
   m_ObjectHideFlags: 0
