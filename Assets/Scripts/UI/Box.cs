@@ -3,19 +3,23 @@ using System.Collections;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(BoxSave))]
 public class Box : MonoBehaviour
 {
-    public string playerTag = "Player";   
-    public float delayBeforeDestroy = 0.3f;       
-    public Transform lootSpawnPoint;     
+    public string playerTag = "Player";
+    public float delayBeforeDestroy = 0.3f;
+    public Transform lootSpawnPoint;
 
     private Animator anim;
     private bool opened = false;
+    private BoxSave boxSave;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
         anim.enabled = false;
+
+        boxSave = GetComponent<BoxSave>();
 
         var col = GetComponent<Collider2D>();
         col.isTrigger = true;
@@ -27,8 +31,9 @@ public class Box : MonoBehaviour
         if (!other.CompareTag(playerTag)) return;
 
         opened = true;
-        anim.enabled = true;            
-        anim.SetTrigger("Open");       
+
+        anim.enabled = true;
+        anim.SetTrigger("Open");
 
         StartCoroutine(DestroyAfterAnimation());
     }
@@ -40,6 +45,9 @@ public class Box : MonoBehaviour
 
         yield return new WaitForSeconds(animLength + delayBeforeDestroy);
 
-        Destroy(gameObject);
+        if (boxSave != null)
+            boxSave.BreakBox();
+        else
+            Destroy(gameObject);
     }
 }

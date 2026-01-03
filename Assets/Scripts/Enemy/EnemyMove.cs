@@ -3,6 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyMove : MonoBehaviour
 {
+    [Header("Unique ID for saving enemy state")]
+    public int enemyID;
+
     [Header("Speed")]
     public float patrolSpeed = 2f;
     public float chaseSpeed = 3.5f;
@@ -26,9 +29,32 @@ public class EnemyMove : MonoBehaviour
     private bool movingRight = true;
     private float ignoreEdgeTimer;
 
+    private string keyX;
+    private string keyY;
+    private string keyFacing;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        keyX = "Enemy_X_" + enemyID;
+        keyY = "Enemy_Y_" + enemyID;
+        keyFacing = "Enemy_Facing_" + enemyID;
+
+        if (PlayerPrefs.HasKey(keyX) && PlayerPrefs.HasKey(keyY))
+        {
+            float x = PlayerPrefs.GetFloat(keyX);
+            float y = PlayerPrefs.GetFloat(keyY);
+            transform.position = new Vector3(x, y, transform.position.z);
+        }
+
+        if (PlayerPrefs.HasKey(keyFacing))
+        {
+            movingRight = PlayerPrefs.GetInt(keyFacing) == 1; 
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * (movingRight ? 1 : -1);
+            transform.localScale = scale;
+        }
 
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -37,6 +63,7 @@ public class EnemyMove : MonoBehaviour
     void FixedUpdate()
     {
         bool seePlayer = PlayerInRange();
+
         if (ignoreEdgeTimer > 0)
         {
             ignoreEdgeTimer -= Time.fixedDeltaTime;
@@ -47,9 +74,10 @@ public class EnemyMove : MonoBehaviour
             {
                 StopMove();
                 Flip();
-                return; 
+                return;
             }
         }
+
         if (seePlayer)
         {
             FacePlayer();
@@ -59,6 +87,11 @@ public class EnemyMove : MonoBehaviour
         {
             Patrol();
         }
+
+        PlayerPrefs.SetFloat(keyX, transform.position.x);
+        PlayerPrefs.SetFloat(keyY, transform.position.y);
+        PlayerPrefs.SetInt(keyFacing, movingRight ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     void Patrol()
@@ -120,7 +153,7 @@ public class EnemyMove : MonoBehaviour
     void Flip()
     {
         movingRight = !movingRight;
-        ignoreEdgeTimer = ignoreEdgeTime; 
+        ignoreEdgeTimer = ignoreEdgeTime;
 
         Vector3 scale = transform.localScale;
         scale.x *= -1;

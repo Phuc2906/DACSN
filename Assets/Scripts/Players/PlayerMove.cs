@@ -62,10 +62,15 @@ public class PlayerMove : MonoBehaviour
 
         animator.SetBool("IsRunning", Mathf.Abs(rb.linearVelocity.x) > 0.01f);
     }
+
     public void SavePosition()
     {
         PlayerPrefs.SetFloat("PlayerX", transform.position.x);
         PlayerPrefs.SetFloat("PlayerY", transform.position.y);
+
+        int facing = transform.localScale.x > 0 ? 1 : -1;
+        PlayerPrefs.SetInt("PlayerFacing", facing);
+
         PlayerPrefs.Save();
     }
 
@@ -77,6 +82,12 @@ public class PlayerMove : MonoBehaviour
             float y = PlayerPrefs.GetFloat("PlayerY");
 
             transform.position = new Vector3(x, y, transform.position.z);
+
+            if (PlayerPrefs.HasKey("PlayerFacing"))
+            {
+                int facing = PlayerPrefs.GetInt("PlayerFacing");
+                transform.localScale = new Vector3(facing * Mathf.Abs(trucx), trucy, 1);
+            }
         }
     }
 }

@@ -1,24 +1,28 @@
 using UnityEngine;
 
-public class HealthItem : MonoBehaviour
+public class ItemHealth : MonoBehaviour
 {
-    public float healAmount = 20f;
+    public int healAmount = 20;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private ItemHealthSave save;
+
+    void Awake()
     {
-        if (other.CompareTag("Player"))
+        save = GetComponent<ItemHealthSave>();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
         {
-            PlayerHealth health = other.GetComponent<PlayerHealth>();
-            if (health != null)
-            {
-                health.Heal((int)healAmount); 
-                Debug.Log("Đã hồi máu cho Player!");
-                Destroy(gameObject);
-            }
-            else
-            {
-                Debug.LogWarning("PlayerHealth not found on " + other.name);
-            }
+            playerHealth.Heal(healAmount);
         }
+        if (save != null)
+            save.Collect();
+        else
+            Destroy(gameObject);
     }
 }
