@@ -834,10 +834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52ca0e585ccbfa4ba3962d7efa012c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCoins: 48
-  totalBoxes: 7
-  totalHealthItems: 7
-  totalEnemies: 4
+  totalCoins: 50
+  totalBoxes: 50
+  totalHealthItems: 50
+  totalEnemies: 50
 --- !u!1001 &203164657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2342,7 +2342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400976320298067515, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1882410312803724134, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4251,19 +4251,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8323142794478701683, guid: 1dac038e5cbd60547a8fe7c316b65592, type: 3}
       propertyPath: totalBoxes
-      value: 7
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8323142794478701683, guid: 1dac038e5cbd60547a8fe7c316b65592, type: 3}
       propertyPath: totalCoins
-      value: 48
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8323142794478701683, guid: 1dac038e5cbd60547a8fe7c316b65592, type: 3}
       propertyPath: totalEnemies
-      value: 4
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8323142794478701683, guid: 1dac038e5cbd60547a8fe7c316b65592, type: 3}
       propertyPath: totalHealthItems
-      value: 7
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25313,6 +25313,10 @@ PrefabInstance:
     - target: {fileID: 4492765498208335975, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486516878234600800, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
+      propertyPath: maxHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5486516878234600800, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
       propertyPath: gameOverCanvas
