@@ -39,6 +39,8 @@ public class RestartGame : MonoBehaviour
             PlayerPrefs.DeleteKey("Enemy_X_" + i);
             PlayerPrefs.DeleteKey("Enemy_Y_" + i);
             PlayerPrefs.DeleteKey("Enemy_Facing_" + i);
+            PlayerPrefs.DeleteKey("EnemyHealth_" + i);
+            PlayerPrefs.DeleteKey("EnemyDead_" + i);
         }
 
         PlayerPrefs.DeleteKey("PlayerHealth");

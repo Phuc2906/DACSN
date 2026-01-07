@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949202029f8b8eb44a1946ec9150f4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 1
   patrolSpeed: 2
   chaseSpeed: 3.5
   detectRange: 4
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e4fb350547d8f743b479282a7f3ec20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: 1
   maxHealth: 10
   maxExp: 5
   healthBar: {fileID: 5959548714255054902}

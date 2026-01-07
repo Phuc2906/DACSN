@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3482097833961875615
+--- !u!1001 &8551831822702490532
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 29792856911240404, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 29792856911240404, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -42.28
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 29792856911240404, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 29792856911240404, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 29792856911240404, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 29792856911240404, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 29792856911240404, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -48,35 +48,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4844616208169222304, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c5a100f959f972742be76e7c2d86edb2, type: 3}
     - target: {fileID: 7869047605056167854, guid: 5a550f83e300c49499b55c658b029612, type: 3}
       propertyPath: m_Name
-      value: BulletPrefab_Enemy Variant
+      value: BulletPrefab_BigGun
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1229938295206328188, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+    - target: {fileID: 8731936557072256050, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+      propertyPath: m_Size.x
+      value: 0.54979455
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731936557072256050, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+      propertyPath: m_Size.y
+      value: 0.3745566
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731936557072256050, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.02363509
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731936557072256050, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.000000029802322
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731936557072256050, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731936557072256050, guid: 5a550f83e300c49499b55c658b029612, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7869047605056167854, guid: 5a550f83e300c49499b55c658b029612, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5223379257218802478}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a550f83e300c49499b55c658b029612, type: 3}
---- !u!1 &6730238891920897841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7869047605056167854, guid: 5a550f83e300c49499b55c658b029612, type: 3}
-  m_PrefabInstance: {fileID: 3482097833961875615}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5223379257218802478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6730238891920897841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 721c6517d55b039419932c80b0ed9660, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  lifeTime: 2

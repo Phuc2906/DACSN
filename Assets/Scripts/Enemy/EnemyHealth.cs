@@ -3,23 +3,39 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    [Header("Config")]
+    public int enemyID;             
     public int maxHealth = 10;
     public int maxExp = 5;
+
     private int currentHealth;
-
-    public Slider healthBar;
-
-    private Animator anim;
     private bool isDead = false;
 
+    public Slider healthBar;
+    private Animator anim;
     private EnemySave save;
+
+    string healthKey;
+    string deadKey;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         save = GetComponent<EnemySave>();
 
-        currentHealth = maxHealth;
+        healthKey = "EnemyHealth_" + enemyID;
+        deadKey   = "EnemyDead_" + enemyID;
+
+        if (PlayerPrefs.GetInt(deadKey, 0) == 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        if (PlayerPrefs.HasKey(healthKey))
+            currentHealth = PlayerPrefs.GetInt(healthKey);
+        else
+            currentHealth = maxHealth;
 
         if (healthBar != null)
         {
@@ -35,19 +51,24 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
+        PlayerPrefs.SetInt(healthKey, currentHealth);
+        PlayerPrefs.Save();
+
         if (healthBar != null)
             healthBar.value = currentHealth;
 
         if (currentHealth <= 0)
-        {
             Die();
-        }
     }
 
     void Die()
     {
         isDead = true;
         anim.SetTrigger("Dead");
+
+        PlayerPrefs.SetInt(deadKey, 1);
+        PlayerPrefs.DeleteKey(healthKey);
+        PlayerPrefs.Save();
 
         FindObjectOfType<PlayerExpManager>().GainExp(maxExp);
 
@@ -68,9 +89,7 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gun.gameObject);
 
         foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("Bullet_Enemy"))
-        {
             Destroy(bullet);
-        }
 
         if (save != null)
             save.Collect();

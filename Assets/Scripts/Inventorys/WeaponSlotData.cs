@@ -1,8 +1,9 @@
 using UnityEngine;
 
 [System.Serializable]
-public class WeaponSlotData
+public class WeaponData
 {
-    public Sprite icon;          
-    public GameObject prefab;    
+    public string playerPrefKey;   
+    public Sprite icon;            
+    public GameObject weaponPrefab; 
 }

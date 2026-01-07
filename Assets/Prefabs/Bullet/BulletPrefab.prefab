@@ -105,7 +105,11 @@ MonoBehaviour:
   speed: 10
   lifeTime: 2
   buffCanvas: {fileID: 0}
-  normalDamage: 1
+  normalDamage: 5
+  detectRange: 6
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!61 &8731936557072256050
 BoxCollider2D:
   m_ObjectHideFlags: 0
