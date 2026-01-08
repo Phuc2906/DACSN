@@ -16,39 +16,25 @@ public class Item_05 : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("[Item_05] Start() được gọi");
-        
-        // Load trạng thái đã mua
         isBought = PlayerPrefs.GetInt(playerPrefKey, 0) == 1;
-        Debug.Log($"[Item_05] Load PlayerPrefs: {playerPrefKey} = {PlayerPrefs.GetInt(playerPrefKey, 0)}");
-        Debug.Log($"[Item_05] isBought = {isBought}");
-
         buyButton.onClick.AddListener(OnBuyButtonClicked);
         UpdateButtonUI();
     }
 
     private void OnBuyButtonClicked()
     {
-        Debug.Log("[Item_05] Button được click!");
         
         if (isBought)
         {
-            Debug.LogWarning("[Item_05] Đã mua rồi, không thể mua lại!");
             return;
         }
 
-        Debug.Log("[Item_05] ✓ Mua miễn phí! Đang lưu...");
-        
         isBought = true;
         
-        // LƯU VÀO PLAYERPREFS
         PlayerPrefs.SetInt(playerPrefKey, 1);
         PlayerPrefs.Save();
         
-        // Verify đã lưu thành công
         int verify = PlayerPrefs.GetInt(playerPrefKey, -1);
-        Debug.Log($"[Item_05] ✓ Đã lưu PlayerPrefs! Verify: {playerPrefKey} = {verify}");
-        
         UpdateButtonUI();
     }
 
@@ -57,16 +43,14 @@ public class Item_05 : MonoBehaviour
         if (isBought)
         {
             buttonImage.color = boughtColor;
-            buttonText.text = "Bought";
+            buttonText.text = "Đã nhận";
             buyButton.interactable = false;
-            Debug.Log("[Item_05] UI cập nhật: BOUGHT");
         }
         else
         {
             buttonImage.color = normalColor;
-            buttonText.text = "Buy";
+            buttonText.text = "Nhận";
             buyButton.interactable = true;
-            Debug.Log("[Item_05] UI cập nhật: Buy (Free)");
         }
     }
 }

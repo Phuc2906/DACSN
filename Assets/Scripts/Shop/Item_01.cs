@@ -18,48 +18,32 @@ public class Item_01 : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("[Item_01] Start() được gọi");
         
-        // Load trạng thái đã mua
         isBought = PlayerPrefs.GetInt(playerPrefKey, 0) == 1;
-        Debug.Log($"[Item_01] Load PlayerPrefs: {playerPrefKey} = {PlayerPrefs.GetInt(playerPrefKey, 0)}");
-        Debug.Log($"[Item_01] isBought = {isBought}");
-
         buyButton.onClick.AddListener(OnBuyButtonClicked);
         UpdateButtonUI();
     }
 
     private void OnBuyButtonClicked()
     {
-        Debug.Log("[Item_01] Button được click!");
         
         if (isBought)
         {
-            Debug.LogWarning("[Item_01] Đã mua rồi, không thể mua lại!");
             return;
         }
-
-        Debug.Log($"[Item_01] Đang thử mua với giá {price} coin...");
         
         if (CoinManager.Instance.SpendCoin(price))
         {
-            Debug.Log("[Item_01] ✓ Đủ tiền! Đang lưu...");
-            
             isBought = true;
             
-            // LƯU VÀO PLAYERPREFS
             PlayerPrefs.SetInt(playerPrefKey, 1);
             PlayerPrefs.Save();
             
-            // Verify đã lưu thành công
             int verify = PlayerPrefs.GetInt(playerPrefKey, -1);
-            Debug.Log($"[Item_01] ✓ Đã lưu PlayerPrefs! Verify: {playerPrefKey} = {verify}");
-            
             UpdateButtonUI();
         }
         else
         {
-            Debug.LogWarning("[Item_01] ❌ Không đủ tiền!");
             if (noticeCanvas != null)
                 noticeCanvas.gameObject.SetActive(true);
         }
@@ -70,16 +54,14 @@ public class Item_01 : MonoBehaviour
         if (isBought)
         {
             buttonImage.color = boughtColor;
-            buttonText.text = "Bought";
+            buttonText.text = "Đã mua";
             buyButton.interactable = false;
-            Debug.Log("[Item_01] UI cập nhật: BOUGHT");
         }
         else
         {
             buttonImage.color = normalColor;
             buttonText.text = price.ToString();
             buyButton.interactable = true;
-            Debug.Log($"[Item_01] UI cập nhật: {price} coin");
         }
     }
 }
