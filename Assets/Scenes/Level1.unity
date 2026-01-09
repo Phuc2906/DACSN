@@ -325,10 +325,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 868083452}
     m_Modifications:
-    - target: {fileID: 540541953319966999, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
-      propertyPath: enemyID
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 1174208458907930795, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 932687fea93c35749a31002567e66760, type: 2}
     - target: {fileID: 1345226510607711054, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_Name
       value: Enermy
@@ -372,14 +372,6 @@ PrefabInstance:
     - target: {fileID: 1882410312803724134, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4825747240581514204, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4825747240581514204, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
-      propertyPath: enemyID
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6736410148220843813, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3438,7 +3430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400976320298067515, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882410312803724134, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5055,7 +5047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400976320298067515, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1882410312803724134, guid: 74596a12e105cd544ae103c00818fd20, type: 3}
       propertyPath: m_LocalPosition.x

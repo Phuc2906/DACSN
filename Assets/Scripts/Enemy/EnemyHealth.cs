@@ -94,6 +94,6 @@ public class EnemyHealth : MonoBehaviour
         if (save != null)
             save.Collect();
         else
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 2f);
     }
 }

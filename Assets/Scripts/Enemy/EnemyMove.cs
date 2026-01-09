@@ -13,7 +13,7 @@ public class EnemyMove : MonoBehaviour
     [Header("Detect Player")]
     public float detectRange = 4f;
     public float maxHeightDiff = 1.2f;
-    public Transform player;
+    private Transform player;
 
     [Header("Ground / Wall Check")]
     public Transform groundCheck;
@@ -50,18 +50,22 @@ public class EnemyMove : MonoBehaviour
 
         if (PlayerPrefs.HasKey(keyFacing))
         {
-            movingRight = PlayerPrefs.GetInt(keyFacing) == 1; 
+            movingRight = PlayerPrefs.GetInt(keyFacing) == 1;
             Vector3 scale = transform.localScale;
             scale.x = Mathf.Abs(scale.x) * (movingRight ? 1 : -1);
             transform.localScale = scale;
         }
 
-        if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        FindActivePlayer();
     }
 
     void FixedUpdate()
     {
+        if (player == null || !player.gameObject.activeInHierarchy)
+        {
+            FindActivePlayer();
+        }
+
         bool seePlayer = PlayerInRange();
 
         if (ignoreEdgeTimer > 0)
@@ -92,6 +96,22 @@ public class EnemyMove : MonoBehaviour
         PlayerPrefs.SetFloat(keyY, transform.position.y);
         PlayerPrefs.SetInt(keyFacing, movingRight ? 1 : 0);
         PlayerPrefs.Save();
+    }
+
+    void FindActivePlayer()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject p in players)
+        {
+            if (p.activeInHierarchy)
+            {
+                player = p.transform;
+                return;
+            }
+        }
+
+        player = null;
     }
 
     void Patrol()

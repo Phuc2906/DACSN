@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f;
+    [Header("Movement")]
+    public float speed = 12f;
     public float lifeTime = 2f;
 
-    public GameObject buffCanvas;
+    [Header("Damage")]
     public int normalDamage = 5;
+    public GameObject buffCanvas;
 
-    [Header("Auto Aim")]
+    [Header("Auto Aim (Chỉ lúc bắn)")]
     public float detectRange = 6f;
     public LayerMask enemyLayer;
+
+    [Header("Aim")]
+    public float aimYMultiplier = 1f;
+
 
     private Vector2 direction;
 
@@ -19,9 +25,17 @@ public class Bullet : MonoBehaviour
         Transform enemy = FindNearestEnemy();
 
         if (enemy != null)
-            direction = (enemy.position - transform.position).normalized;
+        {
+            Vector2 aimDir = (enemy.position - transform.position);
+
+            aimDir.y *= aimYMultiplier;
+
+            direction = aimDir.normalized;
+        }
         else
+        {
             direction = defaultDir.normalized;
+        }
 
         RotateBullet();
     }
@@ -76,6 +90,7 @@ public class Bullet : MonoBehaviour
             if (enemy != null)
             {
                 int finalDamage = normalDamage;
+
                 if (buffCanvas != null && buffCanvas.activeSelf)
                     finalDamage *= 2;
 
