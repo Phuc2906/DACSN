@@ -1,26 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
-public class HotbarItem
-{
-    public string playerPrefKey;
-    public Sprite icon;
-}
-
 public class WeaponHotbarManager : MonoBehaviour
 {
     public static WeaponHotbarManager Instance;
 
-    [Header("Slot")]
+    [Header("Hotbar Slots")]
     public Image[] slots;
 
-    [Header("Icon")]
+    [Header("Items")]
     public HotbarItem[] items;
 
     void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
     }
 
     void Start()
@@ -30,19 +26,18 @@ public class WeaponHotbarManager : MonoBehaviour
 
     public void LoadHotbar()
     {
+        
         foreach (Image slot in slots)
             ClearIcon(slot);
 
-        int slotCursor = 0;
-
+        
         foreach (HotbarItem item in items)
         {
             if (PlayerPrefs.GetInt(item.playerPrefKey, 0) == 1)
             {
-                if (slotCursor < slots.Length)
+                if (item.slotIndex >= 0 && item.slotIndex < slots.Length)
                 {
-                    SetIcon(slots[slotCursor], item.icon);
-                    slotCursor++;
+                    SetIcon(slots[item.slotIndex], item.icon);
                 }
             }
         }
@@ -50,14 +45,20 @@ public class WeaponHotbarManager : MonoBehaviour
 
     void SetIcon(Image slot, Sprite icon)
     {
-        Image iconImage = slot.transform.Find("Icon").GetComponent<Image>();
+        Transform iconTf = slot.transform.Find("Icon");
+        if (iconTf == null) return;
+
+        Image iconImage = iconTf.GetComponent<Image>();
         iconImage.sprite = icon;
         iconImage.enabled = true;
     }
 
     void ClearIcon(Image slot)
     {
-        Image iconImage = slot.transform.Find("Icon").GetComponent<Image>();
+        Transform iconTf = slot.transform.Find("Icon");
+        if (iconTf == null) return;
+
+        Image iconImage = iconTf.GetComponent<Image>();
         iconImage.sprite = null;
         iconImage.enabled = false;
     }

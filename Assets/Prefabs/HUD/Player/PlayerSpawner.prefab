@@ -62,14 +62,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 915523896862407192}
     m_Modifications:
+    - target: {fileID: 2609664469671693342, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
+      propertyPath: m_Name
+      value: AK Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819494430338443122, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4819494430338443122, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4851834434131199455, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
+      propertyPath: weapons.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
+    - target: {fileID: 5963766105901495895, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
     - target: {fileID: 6213159821820720376, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6213159821820720376, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6427244360148984978, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 655297951440866526, guid: 92001809dc85b9043a1309c0ceab19de, type: 3}
     - target: {fileID: 7233236003951770019, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
       propertyPath: m_Name
       value: Player_02
@@ -141,14 +165,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 915523896862407192}
     m_Modifications:
+    - target: {fileID: 13136777779546982, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
+      propertyPath: m_Name
+      value: AK Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 740324216734954148, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 655297951440866526, guid: 92001809dc85b9043a1309c0ceab19de, type: 3}
     - target: {fileID: 3581705823541892635, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3581705823541892635, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4064684574439573798, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064684574439573798, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791377103366592260, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
     - target: {fileID: 6082710051607499958, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
       propertyPath: m_Name
       value: Player_04
@@ -157,6 +201,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7867458357561250373, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
+      propertyPath: weapons.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
     - target: {fileID: 9212129953407717700, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -220,14 +268,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 915523896862407192}
     m_Modifications:
+    - target: {fileID: 1242601139273550880, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 655297951440866526, guid: 92001809dc85b9043a1309c0ceab19de, type: 3}
     - target: {fileID: 1439429187394295779, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1439429187394295779, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1450875238434960416, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
+      propertyPath: m_Name
+      value: AK Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452339716143278252, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
+      propertyPath: weapons.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
+    - target: {fileID: 1925526937068985743, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
     - target: {fileID: 2290199688980776001, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
       propertyPath: m_Name
       value: Player_01
@@ -235,6 +299,14 @@ PrefabInstance:
     - target: {fileID: 2290199688980776001, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869608506497990816, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2869608506497990816, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4492765498208335975, guid: 3f8c679355b66394698ebc1aa51e73e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -347,13 +419,37 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1612164269388001260, guid: caeef38626069244cade175a69267661, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1612164269388001260, guid: caeef38626069244cade175a69267661, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973268436078935208, guid: caeef38626069244cade175a69267661, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 655297951440866526, guid: 92001809dc85b9043a1309c0ceab19de, type: 3}
+    - target: {fileID: 3759600549603575950, guid: caeef38626069244cade175a69267661, type: 3}
+      propertyPath: weapons.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
     - target: {fileID: 4187405496165184068, guid: caeef38626069244cade175a69267661, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4187405496165184068, guid: caeef38626069244cade175a69267661, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920433611242501169, guid: caeef38626069244cade175a69267661, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
+    - target: {fileID: 7220565217283035043, guid: caeef38626069244cade175a69267661, type: 3}
+      propertyPath: m_Name
+      value: AK Gun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

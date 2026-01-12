@@ -66,8 +66,6 @@ public class WeaponController : MonoBehaviour
 
     currentWeapon.transform.localPosition = Vector3.zero;
     currentWeapon.transform.localRotation = Quaternion.identity;
-    currentWeapon.transform.localScale = Vector3.one;
-
     currentSlot = slotIndex;
     UpdateSlotVisual();
 }
