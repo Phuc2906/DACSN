@@ -17,7 +17,6 @@ public class Bullet : MonoBehaviour
     [Header("Aim")]
     public float aimYMultiplier = 1f;
 
-
     private Vector2 direction;
 
     public void SetDirection(Vector2 defaultDir)
@@ -27,9 +26,7 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             Vector2 aimDir = (enemy.position - transform.position);
-
             aimDir.y *= aimYMultiplier;
-
             direction = aimDir.normalized;
         }
         else
@@ -97,6 +94,11 @@ public class Bullet : MonoBehaviour
                 enemy.TakeDamage(finalDamage);
                 Destroy(gameObject);
             }
+        }
+
+        if (collision.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
         }
     }
 }

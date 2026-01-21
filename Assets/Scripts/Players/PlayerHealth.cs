@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,15 +12,20 @@ public class PlayerHealth : MonoBehaviour
     public GameObject player;
 
     [Header("PlayerPrefs key")]
-    public string playerRefKey = "PlayerHealth"; 
+    public string playerRefKey = "PlayerHealth";
+
+    void Awake()
+    {
+        if (PlayerPrefs.HasKey(playerRefKey))
+            currentHealth = PlayerPrefs.GetInt(playerRefKey);
+        else
+            currentHealth = maxHealth;
+
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+    }
 
     void Start()
     {
-        if (PlayerPrefs.HasKey(playerRefKey))
-            currentHealth = PlayerPrefs.GetInt(playerRefKey);  
-        else
-            currentHealth = maxHealth;  
-
         if (healthBar != null)
         {
             healthBar.SetMaxHealth(maxHealth);
@@ -34,12 +38,11 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
-        currentHealth -= dmg;
-        currentHealth = Mathf.Max(currentHealth, 0);
+        if (currentHealth <= 0) return;
 
-        if (healthBar != null)
-            healthBar.SetHealth(currentHealth);
+        currentHealth = Mathf.Max(currentHealth - dmg, 0);
 
+        UpdateUI();
         SaveHealth();
 
         if (currentHealth <= 0)
@@ -48,51 +51,61 @@ public class PlayerHealth : MonoBehaviour
 
     public void Heal(int amount)
     {
-        currentHealth += amount;
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        if (currentHealth <= 0) return;
+        if (currentHealth >= maxHealth) return;
+
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+
+        UpdateUI();
+        SaveHealth();
+    }
+
+    void UpdateUI()
+    {
         if (healthBar != null)
             healthBar.SetHealth(currentHealth);
-
-        SaveHealth();
     }
 
     void Die()
     {
         foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
             Destroy(enemy);
-        }
 
         foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("Bullet"))
-        {
             Destroy(bullet);
-        }
 
         if (gameOverCanvas != null)
             gameOverCanvas.SetActive(true);
 
-        player.SetActive(false);
+        if (player != null)
+            player.SetActive(false);
 
         Time.timeScale = 0f;
     }
 
-    public int GetHealth()
+    void SaveHealth()
+    {
+        PlayerPrefs.SetInt(playerRefKey, currentHealth);
+        PlayerPrefs.Save();
+    }
+
+    public int GetCurrentHealth()
     {
         return currentHealth;
     }
 
-    public void SetHealth(int value)
+    public int GetMaxHealth()
     {
-        currentHealth = Mathf.Clamp(value, 0, maxHealth);
-        if (healthBar != null)
-            healthBar.SetHealth(currentHealth);
-
-        SaveHealth();
+        return maxHealth;
     }
 
-    private void SaveHealth()
+    public bool IsAlive()
     {
-        PlayerPrefs.SetInt(playerRefKey, currentHealth);
-        PlayerPrefs.Save();
+        return currentHealth > 0;
+    }
+
+    public bool IsHealthFull()
+    {
+        return currentHealth >= maxHealth;
     }
 }

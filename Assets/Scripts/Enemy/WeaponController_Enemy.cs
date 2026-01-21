@@ -9,7 +9,6 @@ public class WeaponController_Enemy : MonoBehaviour
     private Transform player;
     private GameObject currentWeapon;
     private SpriteRenderer enemySprite;
-    private Gun currentGun;
 
     void Start()
     {
@@ -26,22 +25,18 @@ public class WeaponController_Enemy : MonoBehaviour
             return;
         }
 
-        if (currentWeapon == null) return;
+        if (weaponHolder == null) return;
 
-        Vector3 direction = player.position - currentWeapon.transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        currentWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        var weaponSprite = currentWeapon.GetComponent<SpriteRenderer>();
-        if (weaponSprite != null)
-            weaponSprite.flipX = enemySprite.flipX;
+        Vector3 scale = weaponHolder.localScale;
+        scale.x = enemySprite.flipX
+            ? -Mathf.Abs(scale.x)
+            : Mathf.Abs(scale.x);
+        weaponHolder.localScale = scale;
     }
 
     void FindActivePlayer()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
-        foreach (GameObject p in players)
+        foreach (var p in GameObject.FindGameObjectsWithTag("Player"))
         {
             if (p.activeInHierarchy)
             {
@@ -49,13 +44,12 @@ public class WeaponController_Enemy : MonoBehaviour
                 return;
             }
         }
-
         player = null;
     }
 
     public void EquipWeapon(GameObject weaponPrefab)
     {
-        if (weaponPrefab == null) return;
+        if (weaponPrefab == null || weaponHolder == null) return;
 
         if (currentWeapon != null)
             Destroy(currentWeapon);
@@ -66,7 +60,5 @@ public class WeaponController_Enemy : MonoBehaviour
             weaponHolder.rotation,
             weaponHolder
         );
-
-        currentGun = currentWeapon.GetComponent<Gun>();
     }
 }
