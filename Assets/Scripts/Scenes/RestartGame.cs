@@ -49,6 +49,10 @@ public class RestartGame : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayerY");
         PlayerPrefs.DeleteKey("PlayerFacing");
 
+        PlayerPrefs.DeleteKey("NPC_A_Destroyed");
+        PlayerPrefs.DeleteKey("Mission_A_Destroyed");
+        PlayerPrefs.DeleteKey("Toggle_Unlocked");
+
 
         PlayerPrefs.Save();
 

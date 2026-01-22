@@ -245,12 +245,12 @@ TextureImporter:
       name: HealthItem_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 524
-        width: 300
-        height: 500
+        x: 127
+        y: 509
+        width: 223
+        height: 350
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -267,12 +267,12 @@ TextureImporter:
       name: HealthItem_1
       rect:
         serializedVersion: 2
-        x: 300
-        y: 524
-        width: 300
-        height: 500
+        x: 404
+        y: 504
+        width: 215
+        height: 358
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -289,12 +289,12 @@ TextureImporter:
       name: HealthItem_2
       rect:
         serializedVersion: 2
-        x: 600
-        y: 524
-        width: 300
-        height: 500
+        x: 670
+        y: 510
+        width: 216
+        height: 350
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -311,12 +311,12 @@ TextureImporter:
       name: HealthItem_3
       rect:
         serializedVersion: 2
-        x: 900
-        y: 524
-        width: 300
-        height: 500
+        x: 948
+        y: 509
+        width: 217
+        height: 347
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,11 +334,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1200
-        y: 524
-        width: 300
-        height: 500
+        y: 513
+        width: 229
+        height: 343
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -355,12 +355,12 @@ TextureImporter:
       name: HealthItem_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
-        width: 300
-        height: 500
+        x: 126
+        y: 129
+        width: 226
+        height: 349
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -377,12 +377,12 @@ TextureImporter:
       name: HealthItem_6
       rect:
         serializedVersion: 2
-        x: 300
-        y: 24
-        width: 300
-        height: 500
+        x: 399
+        y: 131
+        width: 221
+        height: 347
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -399,12 +399,12 @@ TextureImporter:
       name: HealthItem_7
       rect:
         serializedVersion: 2
-        x: 600
-        y: 24
-        width: 300
-        height: 500
+        x: 663
+        y: 132
+        width: 237
+        height: 348
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -421,12 +421,12 @@ TextureImporter:
       name: HealthItem_8
       rect:
         serializedVersion: 2
-        x: 900
-        y: 24
-        width: 300
-        height: 500
+        x: 951
+        y: 132
+        width: 216
+        height: 351
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -443,12 +443,12 @@ TextureImporter:
       name: HealthItem_9
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 24
-        width: 300
-        height: 500
+        x: 1198
+        y: 131
+        width: 229
+        height: 354
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
