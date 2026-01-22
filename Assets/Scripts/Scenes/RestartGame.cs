@@ -47,7 +47,8 @@ public class RestartGame : MonoBehaviour
 
         PlayerPrefs.DeleteKey("PlayerX");
         PlayerPrefs.DeleteKey("PlayerY");
-         PlayerPrefs.DeleteKey("PlayerFacing");
+        PlayerPrefs.DeleteKey("PlayerFacing");
+
 
         PlayerPrefs.Save();
 

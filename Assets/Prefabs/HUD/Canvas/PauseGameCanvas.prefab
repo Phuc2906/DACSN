@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 4098620264160977489}
   - component: {fileID: 3245141337775946712}
   - component: {fileID: 6704018546183245379}
-  - component: {fileID: 6586561519977717084}
+  - component: {fileID: 1000594778706433263}
   m_Layer: 5
   m_Name: Setting
   m_TagString: Untagged
@@ -555,9 +555,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6586561519977717084}
-        m_TargetAssemblyTypeName: Setting, Assembly-CSharp
-        m_MethodName: OpenSetting
+      - m_Target: {fileID: 1000594778706433263}
+        m_TargetAssemblyTypeName: CloseCanvas, Assembly-CSharp
+        m_MethodName: Apply
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -567,7 +567,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6586561519977717084
+--- !u!114 &1000594778706433263
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -576,10 +576,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3883697174237413144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49000adc21f020a47b013c93a4b5010f, type: 3}
+  m_Script: {fileID: 11500000, guid: b2490f4488ab4c24a865aedb48ac243c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openedFromGame: 1
+  canvasToEnable:
+  - {fileID: 0}
+  canvasToDisable: []
 --- !u!1 &5250060758818379683
 GameObject:
   m_ObjectHideFlags: 0
