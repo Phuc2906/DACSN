@@ -3,14 +3,14 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject text;       
-    public GameObject paperCanvas;   
+    public GameObject text;
+    public GameObject paperCanvas;
 
     [Header("Interact")]
     public float showRange = 5f;
 
     private Transform player;
-    private bool isInteracting = false; 
+    private bool isInteracting = false;
 
     void Start()
     {
@@ -26,13 +26,13 @@ public class Interact : MonoBehaviour
     {
         if (player == null) return;
 
-        float dist = Vector3.Distance(transform.position, player.position);
+        float dist = Vector2.Distance(transform.position, player.position);
 
         if (!isInteracting)
         {
             if (dist <= showRange)
             {
-                if (!text.activeSelf)
+                if (text != null && !text.activeSelf)
                     text.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
@@ -40,7 +40,7 @@ public class Interact : MonoBehaviour
             }
             else
             {
-                if (text.activeSelf)
+                if (text != null && text.activeSelf)
                     text.SetActive(false);
             }
         }
@@ -54,25 +54,26 @@ public class Interact : MonoBehaviour
     void StartInteract()
     {
         isInteracting = true;
-        if (text != null) 
-        text.SetActive(false);
-        if (paperCanvas != null) 
-        paperCanvas.SetActive(true);
+
+        if (text != null)
+            text.SetActive(false);
+
+        if (paperCanvas != null)
+            paperCanvas.SetActive(true);
     }
 
     public void StopInteract()
-{
-    isInteracting = false;
-
-    if (paperCanvas != null)
-        paperCanvas.SetActive(false);
-
-    if (player != null)
     {
-        float dist = Vector3.Distance(transform.position, player.position);
-        if (dist <= showRange && text != null)
-            text.SetActive(true);
-    }
-}
+        isInteracting = false;
 
+        if (paperCanvas != null)
+            paperCanvas.SetActive(false);
+
+        if (player != null)
+        {
+            float dist = Vector2.Distance(transform.position, player.position);
+            if (dist <= showRange && text != null)
+                text.SetActive(true);
+        }
+    }
 }
