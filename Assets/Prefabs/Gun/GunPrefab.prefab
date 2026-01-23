@@ -41,9 +41,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2314143626113809947}
   - component: {fileID: 7778706003700110008}
-  - component: {fileID: 7566650077806055610}
+  - component: {fileID: 7852846818833805547}
   m_Layer: 0
-  m_Name: Gun_Enemy_01
+  m_Name: GunPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7566650077806055610
+--- !u!114 &7852846818833805547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,11 +129,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8862262135913418987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7908c83b7556d8a428a8419fdb6b04be, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d00f431cf1c3dc4bbc11fa80653aeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1598397301131688895, guid: cc1edb4e548d05e48b7a560440426bcf, type: 3}
+  player: {fileID: 0}
+  bulletPrefab: {fileID: 0}
   firePoint: {fileID: 3779653149685172919}
-  bulletSpeed: 10
-  fireRate: 1
-  detectionRange: 8
+  fireRate: 0.3

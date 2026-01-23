@@ -53,6 +53,14 @@ public class RestartGame : MonoBehaviour
         PlayerPrefs.DeleteKey("Mission_A_Destroyed");
         PlayerPrefs.DeleteKey("Toggle_Unlocked");
 
+        PlayerPrefs.DeleteKey("TeammateDead");
+        PlayerPrefs.DeleteKey("TeammateHealth");
+
+        PlayerPrefs.DeleteKey("Potion_01");
+        PlayerPrefs.DeleteKey("Potion_02");
+
+        PlayerPrefs.DeleteKey("Coin");
+
 
         PlayerPrefs.Save();
 
