@@ -17,6 +17,9 @@ public class TeammateMove : MonoBehaviour
     public float maxDistanceY = 2.5f;
     public float teleportOffsetY = 0.1f;
 
+    [Header("Save")]
+    public string saveID = "Teammate_01";
+
     private GameObject activePlayer;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
@@ -31,6 +34,8 @@ public class TeammateMove : MonoBehaviour
         anim = GetComponent<Animator>();
 
         obstacleLayerMask = LayerMask.GetMask("Obstacle");
+
+        LoadState(); 
     }
 
     void Update()
@@ -100,6 +105,8 @@ public class TeammateMove : MonoBehaviour
 
         if (sr != null)
             sr.flipX = dir < 0;
+
+        SaveState(); 
     }
 
     bool IsPlayerGrounded()
@@ -149,6 +156,7 @@ public class TeammateMove : MonoBehaviour
         transform.position = targetPos;
 
         StopMove();
+        SaveState(); 
     }
 
     void StopMove()
@@ -161,6 +169,36 @@ public class TeammateMove : MonoBehaviour
     {
         if (anim != null)
             anim.SetBool("IsRunning", state);
+    }
+
+    void SaveState()
+    {
+        PlayerPrefs.SetFloat(saveID + "_X", transform.position.x);
+        PlayerPrefs.SetFloat(saveID + "_Y", transform.position.y);
+        PlayerPrefs.SetInt(saveID + "_Facing", sr != null && sr.flipX ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    void LoadState()
+    {
+        if (!PlayerPrefs.HasKey(saveID + "_X")) return;
+
+        float x = PlayerPrefs.GetFloat(saveID + "_X");
+        float y = PlayerPrefs.GetFloat(saveID + "_Y");
+        int facing = PlayerPrefs.GetInt(saveID + "_Facing");
+
+        transform.position = new Vector3(x, y, transform.position.z);
+
+        if (sr != null)
+            sr.flipX = facing == 1;
+    }
+
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteKey(saveID + "_X");
+        PlayerPrefs.DeleteKey(saveID + "_Y");
+        PlayerPrefs.DeleteKey(saveID + "_Facing");
+        PlayerPrefs.Save();
     }
 
 #if UNITY_EDITOR

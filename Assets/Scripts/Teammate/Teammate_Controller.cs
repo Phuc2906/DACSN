@@ -22,9 +22,9 @@ public class TeammateController : MonoBehaviour
 
     void ApplyState()
     {
-        if (targetObject == null || teammateMove == null) return;
+        if (teammateMove == null) return;
 
-        bool shouldDisableMove = targetObject.activeSelf;
+        bool shouldDisableMove = targetObject != null;
 
         if (teammateMove.enabled == shouldDisableMove)
         {

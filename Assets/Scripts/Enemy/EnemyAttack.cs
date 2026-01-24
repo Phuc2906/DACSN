@@ -28,13 +28,18 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player") ||
+            collision.collider.CompareTag("Teammate"))
+        {
             isAttacking = false;
+        }
     }
 
     void TryAttack(Collision2D collision)
     {
-        if (!collision.collider.CompareTag("Player")) return;
+        if (!collision.collider.CompareTag("Player") &&
+            !collision.collider.CompareTag("Teammate"))
+            return;
 
         isAttacking = true;
 
@@ -51,6 +56,10 @@ public class EnemyAttack : MonoBehaviour
         if (collision.collider.TryGetComponent(out PlayerHealth player))
         {
             player.TakeDamage(damage);
+        }
+        else if (collision.collider.TryGetComponent(out TeammateHealth teammate))
+        {
+            teammate.TakeDamage(damage);
         }
     }
 }

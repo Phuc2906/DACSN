@@ -15,6 +15,9 @@ public class RestartGame : MonoBehaviour
     [Header("Tổng số Enemy ban đầu")]
     public int totalEnemies = 20;
 
+    [Header("Optional - Teammate (scene nào có thì kéo)")]
+    public TeammateMove teammateMove;   
+
     public void RestartCurrentScene()
     {
         for (int i = 0; i < totalCoins; i++)
@@ -61,6 +64,12 @@ public class RestartGame : MonoBehaviour
 
         PlayerPrefs.DeleteKey("Coin");
 
+        PlayerPrefs.DeleteKey("Rent_NPC_01");
+
+        if (teammateMove != null)
+        {
+            teammateMove.DeleteSave(); 
+        }
 
         PlayerPrefs.Save();
 

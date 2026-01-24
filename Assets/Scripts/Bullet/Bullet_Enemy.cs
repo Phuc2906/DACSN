@@ -27,20 +27,27 @@ public class Bullet_Enemy : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collision)
+{
+    if (collision.CompareTag("Player"))
     {
-        if (collision.CompareTag("Player"))
-        {
-            PlayerHealth player = collision.GetComponent<PlayerHealth>();
-            if (player != null)
-            {
-                player.TakeDamage(damage);
-            }
+        PlayerHealth player = collision.GetComponent<PlayerHealth>();
+        if (player != null)
+            player.TakeDamage(damage);
 
-            Destroy(gameObject);
-        }
-        else if (collision.CompareTag("Obstacle"))
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
+    else if (collision.CompareTag("Teammate"))
+    {
+        TeammateHealth teammate = collision.GetComponent<TeammateHealth>();
+        if (teammate != null)
+            teammate.TakeDamage(damage);
+
+        Destroy(gameObject);
+    }
+    else if (collision.CompareTag("Obstacle"))
+    {
+        Destroy(gameObject);
+    }
+}
+
 }
