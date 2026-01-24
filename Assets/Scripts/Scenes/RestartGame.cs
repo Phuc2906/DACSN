@@ -62,7 +62,7 @@ public class RestartGame : MonoBehaviour
         PlayerPrefs.DeleteKey("Potion_01");
         PlayerPrefs.DeleteKey("Potion_02");
 
-        PlayerPrefs.DeleteKey("Coin");
+        PlayerPrefs.DeleteKey("Ruby");
 
         PlayerPrefs.DeleteKey("Rent_NPC_01");
 
