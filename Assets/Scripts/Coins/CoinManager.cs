@@ -13,23 +13,36 @@ public class CoinManager : MonoBehaviour
     [Header("UI tổng coin (nếu có)")]
     public TextMeshProUGUI coinText_Total;
 
-    private int coin = 0;
+    [Header("Biến đã lưu (Key_01)")]
+    public string keyLoaded;   
 
-    private const string COIN_KEY = "Coin";
+    [Header("Biến sẽ lưu (Key_02)")]
+    public string keySaving;    
+
+    [Header("Coin mặc định khi bắt đầu")]
+    public int defaultCoin = 30;
+
+    private int coin;
 
     private void Awake()
     {
         if (Instance == null)
-        {
             Instance = this;
-        }
         else
         {
             Destroy(gameObject);
             return;
         }
 
-        coin = PlayerPrefs.GetInt(COIN_KEY, 30);
+        InitCoin();
+    }
+
+    private void InitCoin()
+    {
+        coin = PlayerPrefs.GetInt(keyLoaded, defaultCoin);
+
+        PlayerPrefs.SetInt(keySaving, coin);
+        PlayerPrefs.Save();
 
         UpdateAllTexts();
     }
@@ -38,7 +51,7 @@ public class CoinManager : MonoBehaviour
     {
         coin += value;
 
-        PlayerPrefs.SetInt(COIN_KEY, coin);
+        PlayerPrefs.SetInt(keySaving, coin);
         PlayerPrefs.Save();
 
         UpdateAllTexts();
@@ -46,17 +59,15 @@ public class CoinManager : MonoBehaviour
 
     public bool SpendCoin(int cost)
     {
-        if (coin >= cost)
-        {
-            coin -= cost;
+        if (coin < cost) return false;
 
-            PlayerPrefs.SetInt(COIN_KEY, coin);
-            PlayerPrefs.Save();
+        coin -= cost;
 
-            UpdateAllTexts();
-            return true;
-        }
-        return false;
+        PlayerPrefs.SetInt(keySaving, coin);
+        PlayerPrefs.Save();
+
+        UpdateAllTexts();
+        return true;
     }
 
     private void UpdateAllTexts()

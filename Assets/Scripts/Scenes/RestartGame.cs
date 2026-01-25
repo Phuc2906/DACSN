@@ -16,7 +16,8 @@ public class RestartGame : MonoBehaviour
     public int totalEnemies = 20;
 
     [Header("Optional - Teammate (scene nào có thì kéo)")]
-    public TeammateMove teammateMove;   
+    public TeammateMove teammateMove; 
+    public string CoinKey;
 
     public void RestartCurrentScene()
     {
@@ -62,7 +63,7 @@ public class RestartGame : MonoBehaviour
         PlayerPrefs.DeleteKey("Potion_01");
         PlayerPrefs.DeleteKey("Potion_02");
 
-        PlayerPrefs.DeleteKey("Ruby");
+        PlayerPrefs.DeleteKey("CoinKey");
 
         PlayerPrefs.DeleteKey("Rent_NPC_01");
 

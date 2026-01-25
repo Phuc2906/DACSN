@@ -1656,7 +1656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &908691710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2364,6 +2364,9 @@ MonoBehaviour:
   coinText_GameWin: {fileID: 0}
   coinText_GameOver: {fileID: 0}
   coinText_Total: {fileID: 2111155516}
+  keyLoaded: 
+  keySaving: 
+  defaultCoin: 30
 --- !u!1001 &1604272050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2706,7 +2709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8137633336576361001, guid: 81a203cda15466743897350acf9a2f55, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8212717458037427853, guid: 81a203cda15466743897350acf9a2f55, type: 3}
       propertyPath: m_AnchoredPosition.x

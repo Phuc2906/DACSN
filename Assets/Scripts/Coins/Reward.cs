@@ -18,7 +18,7 @@ public class Reward : MonoBehaviour
 
         rewardValue = (x2Canvas != null && x2Canvas.activeSelf) ? 2 : 1;
 
-        RubyManager.Instance.AddRuby(rewardValue);
+        CoinManager.Instance.AddCoin(rewardValue);
 
         if (coinSave != null)
             coinSave.Collect();
