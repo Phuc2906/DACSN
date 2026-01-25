@@ -61,4 +61,13 @@ public class WeaponController_Enemy : MonoBehaviour
             weaponHolder
         );
     }
+
+    public void RemoveWeapon()
+    {
+        if (currentWeapon != null)
+        {
+            Destroy(currentWeapon);
+            currentWeapon = null;
+        }
+    }
 }

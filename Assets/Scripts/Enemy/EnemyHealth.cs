@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;   // ← THÊM
-
+using TMPro; 
+using System.Collections;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Config")]
@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
     public Slider healthBar;
 
     [Header("UI")]
-    public TMP_Text healthText;   // ← ĐỔI SANG TMP_Text
+    public TMP_Text healthText;   
 
     private Animator anim;
     private EnemySave save;
@@ -48,7 +48,7 @@ public class EnemyHealth : MonoBehaviour
             healthBar.value = currentHealth;
         }
 
-        UpdateHealthText(); // ← GIỮ
+        UpdateHealthText(); 
     }
 
     public void TakeDamage(int damage)
@@ -64,7 +64,7 @@ public class EnemyHealth : MonoBehaviour
         if (healthBar != null)
             healthBar.value = currentHealth;
 
-        UpdateHealthText(); // ← GIỮ
+        UpdateHealthText(); 
 
         if (currentHealth <= 0)
             Die();
@@ -78,37 +78,56 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
         isDead = true;
-        anim.SetTrigger("Dead");
 
+        anim.SetTrigger("Dead");
         PlayerPrefs.SetInt(deadKey, 1);
         PlayerPrefs.DeleteKey(healthKey);
         PlayerPrefs.Save();
 
-        FindObjectOfType<PlayerExpManager>().GainExp(maxExp);
+        var exp = FindObjectOfType<PlayerExpManager>();
+        if (exp != null)
+            exp.GainExp(maxExp);
 
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
 
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null) rb.isKinematic = true;
-
         foreach (var script in GetComponents<MonoBehaviour>())
         {
-            if (script != this)
+            if (script != this &&
+                !(script is EnemySave) &&
+                !(script is Animator))
                 script.enabled = false;
         }
 
-        EnemyGun gun = GetComponentInChildren<EnemyGun>();
-        if (gun != null)
-            Destroy(gun.gameObject);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false;
+        }
+        var weaponCtrl = GetComponent<WeaponController_Enemy>();
+        if (weaponCtrl != null)
+        {
+            weaponCtrl.RemoveWeapon();
+            weaponCtrl.enabled = false; 
+        }
 
         foreach (GameObject bullet in GameObject.FindGameObjectsWithTag("Bullet_Enemy"))
-            Destroy(bullet);
+        Destroy(bullet);
+
+        StartCoroutine(DelayedDestroy());
+    }
+
+    IEnumerator DelayedDestroy()
+    {
+        yield return new WaitForSeconds(1.2f); 
 
         if (save != null)
             save.Collect();
         else
-            Destroy(gameObject, 2f);
+            Destroy(gameObject);
     }
+
 }
