@@ -3,9 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour
 {
-    [Header("Tổng số coin / reward ban đầu")]
-    public int totalCoins = 48;
-
     [Header("Tổng số box ban đầu")]
     public int totalBoxes = 48;
 
@@ -15,17 +12,11 @@ public class RestartGame : MonoBehaviour
     [Header("Tổng số Enemy ban đầu")]
     public int totalEnemies = 20;
 
-    [Header("Optional - Teammate (scene nào có thì kéo)")]
+    [Header("TeammateMove Script")]
     public TeammateMove teammateMove; 
-    public string CoinKey;
 
     public void RestartCurrentScene()
     {
-        for (int i = 0; i < totalCoins; i++)
-        {
-            PlayerPrefs.DeleteKey("Coin_" + i);
-        }
-
         for (int i = 0; i < totalBoxes; i++)
         {
             PlayerPrefs.DeleteKey("Box_" + i);
@@ -62,8 +53,6 @@ public class RestartGame : MonoBehaviour
 
         PlayerPrefs.DeleteKey("Potion_01");
         PlayerPrefs.DeleteKey("Potion_02");
-
-        PlayerPrefs.DeleteKey("CoinKey");
 
         PlayerPrefs.DeleteKey("Rent_NPC_01");
 
