@@ -4,9 +4,11 @@ using UnityEngine.UI;
 
 public class Level : MonoBehaviour
 {
-
     public int levelIndex;
     public Button button;
+
+    [Header("Complete Canvas (Menu)")]
+    public GameObject completeCanvas;
 
     void Start()
     {
@@ -18,6 +20,16 @@ public class Level : MonoBehaviour
 
     public void PlayLevel()
     {
-        SceneManager.LoadScene("Level" + levelIndex);
+        string key = "Level" + levelIndex;
+
+        if (PlayerPrefs.GetInt(key, 0) == 1)
+        {
+            if (completeCanvas != null)
+                completeCanvas.SetActive(true);
+        }
+        else
+        {
+            SceneManager.LoadScene("Level" + levelIndex);
+        }
     }
 }
