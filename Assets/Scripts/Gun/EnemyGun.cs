@@ -5,7 +5,7 @@ public class EnemyGun : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float bulletSpeed = 10f; // giữ biến
+    public float bulletSpeed = 10f; 
     public float fireRate = 1f;
     public float detectionRange = 8f;
 

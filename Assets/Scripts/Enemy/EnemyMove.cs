@@ -3,6 +3,13 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyMove : MonoBehaviour
 {
+    public enum EnemyState
+    {
+        Patrol,
+        Chase,
+        Recover
+    }
+
     [Header("ID")]
     public int enemyID;
 
@@ -16,8 +23,6 @@ public class EnemyMove : MonoBehaviour
 
     [Header("Same Y Check")]
     public float sameYThreshold = 0.1f;
-
-    private Transform player;
 
     [Header("Ground Check (Edge)")]
     public Transform groundCheck;
@@ -34,12 +39,12 @@ public class EnemyMove : MonoBehaviour
     public SpriteRenderer sprite;
 
     private Rigidbody2D rb;
+    private Transform player;
     private bool movingRight = true;
     private float ignoreEdgeTimer;
-
     private Vector2 spawnPosition;
+    private EnemyState currentState;
 
-    // ===== SAVE KEY (GIỐNG SCRIPT MẪU) =====
     private string keyX;
     private string keyY;
     private string keyFacing;
@@ -49,16 +54,17 @@ public class EnemyMove : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
         spawnPosition = transform.position;
+
         FindActivePlayer();
 
-        // Init save keys
         keyX = "Enemy_X_" + enemyID;
         keyY = "Enemy_Y_" + enemyID;
         keyFacing = "Enemy_Facing_" + enemyID;
 
         LoadEnemy();
+
+        currentState = EnemyState.Patrol;
     }
 
     void FixedUpdate()
@@ -68,51 +74,76 @@ public class EnemyMove : MonoBehaviour
 
         if (!IsGrounded())
         {
-            TeleportBackToSpawn();
+            ChangeState(EnemyState.Recover);
+        }
+
+        switch (currentState)
+        {
+            case EnemyState.Patrol:
+                UpdatePatrol();
+                break;
+
+            case EnemyState.Chase:
+                UpdateChase();
+                break;
+
+            case EnemyState.Recover:
+                UpdateRecover();
+                break;
+        }
+
+        PlayerPrefs.SetFloat(keyX, transform.position.x);
+        PlayerPrefs.SetFloat(keyY, transform.position.y);
+        PlayerPrefs.SetInt(keyFacing, movingRight ? 1 : 0);
+    }
+
+    void UpdatePatrol()
+    {
+        HandleEdgeAndWall();
+
+        if (CanChasePlayer())
+        {
+            ChangeState(EnemyState.Chase);
             return;
         }
 
-        if (ignoreEdgeTimer > 0)
-        {
-            ignoreEdgeTimer -= Time.fixedDeltaTime;
-        }
-        else
-        {
-            if (!IsGroundAhead())
-            {
-                Flip();
-                return;
-            }
-        }
-
-        bool seePlayer = PlayerInRange();
-        bool sameGround = seePlayer && PlayerSameGround();
-        bool sameY = seePlayer && PlayerSameY();
-
-        if (seePlayer && sameGround && sameY)
-        {
-            FacePlayer();
-            Move(chaseSpeed);
-        }
-        else
-        {
-            Move(patrolSpeed);
-        }
-
-        // ===== AUTO SAVE (GIỐNG SCRIPT DƯỚI) =====
-        PlayerPrefs.SetFloat(keyX, transform.position.x);
-        PlayerPrefs.SetFloat(keyY, transform.position.y);
-
-        if (sprite != null)
-            PlayerPrefs.SetInt(keyFacing, movingRight ? 1 : 0);
+        Move(patrolSpeed);
     }
 
+    void UpdateChase()
+    {
+        HandleEdgeAndWall();
+
+        if (!CanChasePlayer())
+        {
+            ChangeState(EnemyState.Patrol);
+            return;
+        }
+
+        FacePlayer();
+        Move(chaseSpeed);
+    }
+
+    void UpdateRecover()
+    {
+        TeleportBackToSpawn();
+        ChangeState(EnemyState.Patrol);
+    }
+    void ChangeState(EnemyState newState)
+    {
+        if (currentState == newState) return;
+        currentState = newState;
+    }
     void Move(float speed)
     {
         rb.linearVelocity = new Vector2(
             (movingRight ? 1 : -1) * speed,
             rb.linearVelocity.y
         );
+    }
+    bool CanChasePlayer()
+    {
+        return PlayerInRange() && PlayerSameGround() && PlayerSameY();
     }
 
     bool PlayerInRange()
@@ -128,8 +159,7 @@ public class EnemyMove : MonoBehaviour
     bool PlayerSameY()
     {
         if (player == null) return false;
-        float dy = Mathf.Abs(player.position.y - transform.position.y);
-        return dy <= sameYThreshold;
+        return Mathf.Abs(player.position.y - transform.position.y) <= sameYThreshold;
     }
 
     bool PlayerSameGround()
@@ -150,15 +180,20 @@ public class EnemyMove : MonoBehaviour
             obstacleLayer
         );
 
-        if (!enemyHit || !playerHit) return false;
-        return enemyHit.collider == playerHit.collider;
+        return enemyHit && playerHit && enemyHit.collider == playerHit.collider;
     }
-
-    void FacePlayer()
+    void HandleEdgeAndWall()
     {
-        bool playerOnRight = player.position.x > transform.position.x;
-        if (playerOnRight != movingRight)
+        if (ignoreEdgeTimer > 0)
+        {
+            ignoreEdgeTimer -= Time.fixedDeltaTime;
+            return;
+        }
+
+        if (!IsGroundAhead())
+        {
             Flip();
+        }
     }
 
     bool IsGrounded()
@@ -184,20 +219,6 @@ public class EnemyMove : MonoBehaviour
         );
     }
 
-    void TeleportBackToSpawn()
-    {
-        rb.linearVelocity = Vector2.zero;
-        rb.angularVelocity = 0f;
-
-        transform.position = spawnPosition;
-
-        ignoreEdgeTimer = ignoreEdgeTime;
-        movingRight = true;
-
-        if (sprite != null)
-            sprite.flipX = false;
-    }
-
     void OnCollisionStay2D(Collision2D collision)
     {
         if (!collision.collider.CompareTag("Obstacle")) return;
@@ -212,6 +233,14 @@ public class EnemyMove : MonoBehaviour
             }
         }
     }
+    void FacePlayer()
+    {
+        if (player == null) return;
+
+        bool playerOnRight = player.position.x > transform.position.x;
+        if (playerOnRight != movingRight)
+            Flip();
+    }
 
     void Flip()
     {
@@ -220,6 +249,19 @@ public class EnemyMove : MonoBehaviour
 
         if (sprite != null)
             sprite.flipX = !movingRight;
+    }
+
+    void TeleportBackToSpawn()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        transform.position = spawnPosition;
+        movingRight = true;
+        ignoreEdgeTimer = ignoreEdgeTime;
+
+        if (sprite != null)
+            sprite.flipX = false;
     }
 
     void FindActivePlayer()
@@ -234,8 +276,6 @@ public class EnemyMove : MonoBehaviour
         }
         player = null;
     }
-
-    // ===== MANUAL SAVE (GIỮ TÊN HÀM CŨ) =====
     public void SaveEnemy()
     {
         PlayerPrefs.SetFloat(keyX, transform.position.x);
@@ -243,7 +283,6 @@ public class EnemyMove : MonoBehaviour
         PlayerPrefs.SetInt(keyFacing, movingRight ? 1 : 0);
     }
 
-    // ===== LOAD (GIỐNG SCRIPT MẪU) =====
     public void LoadEnemy()
     {
         if (!PlayerPrefs.HasKey(keyX) || !PlayerPrefs.HasKey(keyY))
@@ -255,8 +294,7 @@ public class EnemyMove : MonoBehaviour
         transform.position = new Vector2(x, y);
         spawnPosition = transform.position;
 
-        if (PlayerPrefs.HasKey(keyFacing))
-            movingRight = PlayerPrefs.GetInt(keyFacing) == 1;
+        movingRight = PlayerPrefs.GetInt(keyFacing, 1) == 1;
 
         if (sprite != null)
             sprite.flipX = !movingRight;

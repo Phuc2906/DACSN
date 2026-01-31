@@ -4825,9 +4825,6 @@ MonoBehaviour:
   coinText_GameWin: {fileID: 226655400}
   coinText_GameOver: {fileID: 646775508}
   coinText_Total: {fileID: 470014035}
-  keyLoaded: Coin_02
-  keySaving: Coin_03
-  defaultCoin: 30
 --- !u!4 &1399775151
 Transform:
   m_ObjectHideFlags: 0
@@ -6955,6 +6952,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ComnicateCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 472373147396216209, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1364035927300138218, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -7017,7 +7018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.958865
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7025,23 +7026,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.94542027
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3.7992232
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5581663204561137480, guid: 4f9d31b669533f64d8ac4c696dcf505e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
