@@ -567,6 +567,7 @@ MonoBehaviour:
   chaseSpeed: 3.5
   detectRange: 4
   maxHeightDiff: 1.2
+  sameYThreshold: 0.1
   groundCheck: {fileID: 5831444864434677573}
   groundCheckDistance: 0.6
   groundBodyCheck: {fileID: 31207017849262012}
@@ -1056,6 +1057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7566650077806055610, guid: ba00f04074eee14419e12b0770e793d2, type: 3}
+    - {fileID: 7852846818833805547, guid: ba00f04074eee14419e12b0770e793d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
