@@ -2,17 +2,21 @@ using UnityEngine;
 
 public class ItemCollect : MonoBehaviour
 {
-    [Header("ID duy nhất cho item")]
+    [Header("ID")]
     public int itemID;
 
     string itemKey;
 
+    [Header("Canvas")]
+    public GameObject Canvas;
+    
     void Awake()
     {
         itemKey = "Item_" + itemID;
 
         if (PlayerPrefs.GetInt(itemKey, 0) == 1)
             Destroy(gameObject);
+            Canvas.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -26,5 +30,6 @@ public class ItemCollect : MonoBehaviour
             WeaponHotbarManager.Instance.LoadHotbar();
 
         Destroy(gameObject);
+        Canvas.SetActive(true);
     }
 }
