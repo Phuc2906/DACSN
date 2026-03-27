@@ -78,6 +78,10 @@ PrefabInstance:
       propertyPath: weapons.Array.data[3].icon
       value: 
       objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
+    - target: {fileID: 5352811430411789152, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5963766105901495895, guid: c3e3bcd862d112c449a8ba4dd13e575e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -188,6 +192,10 @@ PrefabInstance:
     - target: {fileID: 4064684574439573798, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4778399631618866636, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
+      propertyPath: maxHealth
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4791377103366592260, guid: 0e67be4a68bff0d4580c6f2df07b1d99, type: 3}
       propertyPath: m_Sprite
@@ -447,6 +455,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6daa3f6a352f79145aefc2d43a4c5f9b, type: 3}
+    - target: {fileID: 6520864441145088550, guid: caeef38626069244cade175a69267661, type: 3}
+      propertyPath: maxHealth
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7220565217283035043, guid: caeef38626069244cade175a69267661, type: 3}
       propertyPath: m_Name
       value: AK Gun

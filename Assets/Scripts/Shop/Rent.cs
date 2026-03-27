@@ -26,9 +26,9 @@ public class Rent : MonoBehaviour
 
     public void OnButtonClick()
     {
-        if (CoinManager.Instance == null) return;
+        if (RubyManager.Instance == null) return;
 
-        if (CoinManager.Instance.SpendCoin(cost))
+        if (RubyManager.Instance.SpendRuby(cost))
         {
             PlayerPrefs.SetInt(rentID, 1);
             PlayerPrefs.Save();

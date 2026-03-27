@@ -55,7 +55,7 @@ public class Potion_02 : MonoBehaviour
     {
         if (quantity <= 0) return;
 
-        if (CoinManager.Instance.SpendCoin(price))
+        if (RubyManager.Instance.SpendRuby(price))
         {
             quantity--;
 
