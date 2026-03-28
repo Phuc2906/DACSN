@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
 using System.Collections.Generic;
 
 public class Shop : MonoBehaviour
@@ -7,18 +8,24 @@ public class Shop : MonoBehaviour
     [Header("Mở từ Game?")]
     public bool openedFromGame = false;
 
-    [Header("Warning Canvas")]
-    public GameObject warningCanvas;
-
-    [Header("Danh sách Canvas cần check")]
+    [Header("Danh sách Canvas")]
     public List<GameObject> checkCanvases = new List<GameObject>();
+
+    [Header("Button mở shop")] 
+    public Button openShopButton;
+
+    void Update() 
+    {
+        if (openShopButton != null)
+        {
+            openShopButton.interactable = !IsAnyCanvasActive();
+        }
+    }
 
     public void OpenShop()
     {
         if (IsAnyCanvasActive())
         {
-            if (warningCanvas != null)
-                warningCanvas.SetActive(true);
             return;
         }
 

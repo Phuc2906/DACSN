@@ -1900,7 +1900,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Nh\u1EA5n A/D ho\u1EB7c Home/End \u0111\u1EC3 Di chuy\u1EC3n\n\nNh\u1EA5n
     Space \u0111\u1EC3 nh\u1EA3y, nh\u1EA5n 2 l\u1EA7n \u0111\u1EC3 nh\u1EA3y \u0111\xF4i\n\nNh\u1EA5n
-    Z \u0111\u1EC3 b\u1EAFn\n\nNh\u1EA5n J \u0111\u1EC3 T\u1EA1m d\u1EEBng game "
+    Z \u0111\u1EC3 b\u1EAFn\n\nNh\u1EA5n Esc \u0111\u1EC3 T\u1EA1m d\u1EEBng game "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

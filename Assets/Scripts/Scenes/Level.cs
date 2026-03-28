@@ -12,6 +12,11 @@ public class Level : MonoBehaviour
 
     void Start()
     {
+        Refresh();
+    }
+
+    public void Refresh()
+    {
         bool unlocked = levelIndex == 1 ||
             PlayerPrefs.GetInt("Level" + (levelIndex - 1), 0) == 1;
 

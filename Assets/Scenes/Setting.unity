@@ -466,7 +466,7 @@ PrefabInstance:
       propertyPath: m_text
       value: "Nh\u1EA5n A/D ho\u1EB7c Home/End \u0111\u1EC3 Di chuy\u1EC3n\n\nNh\u1EA5n
         Space \u0111\u1EC3 nh\u1EA3y, nh\u1EA5n 2 l\u1EA7n \u0111\u1EC3 nh\u1EA3y
-        \u0111\xF4i\n\nNh\u1EA5n Z \u0111\u1EC3 b\u1EAFn\n\nNh\u1EA5n J \u0111\u1EC3
+        \u0111\xF4i\n\nNh\u1EA5n Z \u0111\u1EC3 b\u1EAFn\n\nNh\u1EA5n Esc \u0111\u1EC3
         T\u1EA1m d\u1EEBng game \n"
       objectReference: {fileID: 0}
     - target: {fileID: 4333313309205183130, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}

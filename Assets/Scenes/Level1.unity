@@ -933,6 +933,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Instrucs Text
       objectReference: {fileID: 0}
+    - target: {fileID: 7288825995263866986, guid: 748be13cc4aed4b4e978969ff4ccb96b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 625
+      objectReference: {fileID: 0}
     - target: {fileID: 8445124375813316995, guid: 748be13cc4aed4b4e978969ff4ccb96b, type: 3}
       propertyPath: canvasPrefKey
       value: InstrucsCanvas
@@ -1166,7 +1170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseGameCanvas: {fileID: 1236485367}
-  gameoverCanvas: {fileID: 0}
+  gameoverCanvas: {fileID: 1834728712}
   gamewinCanvas: {fileID: 204783571}
 --- !u!114 &192346021
 MonoBehaviour:
@@ -1394,6 +1398,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 7214489016127906571, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
+      propertyPath: SceneName
+      value: Mode
+      objectReference: {fileID: 0}
     - target: {fileID: 7340791886583353645, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_Name
       value: GameWinCanvas
@@ -2598,7 +2606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 383738163}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Ruby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28504,6 +28512,10 @@ PrefabInstance:
       propertyPath: warningCanvas
       value: 
       objectReference: {fileID: 427302790}
+    - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+      propertyPath: openShopButton
+      value: 
+      objectReference: {fileID: 200422594945403013}
     - target: {fileID: 2873002757753625247, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
       propertyPath: m_text
       value: "C\u1EEDa h\xE0ng"
@@ -28593,6 +28605,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+--- !u!114 &200422594945403013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6223450467971739133, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+  m_PrefabInstance: {fileID: 200422594945403012}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &389993212865415752 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 389993212150504261, guid: ba613946c7b0673479ab5d7c8bbfc9f1, type: 3}
@@ -29235,36 +29258,16 @@ PrefabInstance:
       propertyPath: m_text
       value: "Nh\u1EA5n A/D ho\u1EB7c Home/End \u0111\u1EC3 Di chuy\u1EC3n\n\nNh\u1EA5n
         Space \u0111\u1EC3 nh\u1EA3y, nh\u1EA5n 2 l\u1EA7n \u0111\u1EC3 nh\u1EA3y
-        \u0111\xF4i\n\nNh\u1EA5n Z \u0111\u1EC3 b\u1EAFn\n\nNh\u1EA5n J \u0111\u1EC3
+        \u0111\xF4i\n\nNh\u1EA5n Z \u0111\u1EC3 b\u1EAFn\n\nNh\u1EA5n Esc \u0111\u1EC3
         T\u1EA1m d\u1EEBng game "
       objectReference: {fileID: 0}
     - target: {fileID: 4294807089302457128, guid: 17d13a803337c5746839e557263d6b93, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 5223848954342221581, guid: 17d13a803337c5746839e557263d6b93, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 5223848954342221581, guid: 17d13a803337c5746839e557263d6b93, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 5223848954342221581, guid: 17d13a803337c5746839e557263d6b93, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 312
-      objectReference: {fileID: 0}
-    - target: {fileID: 5223848954342221581, guid: 17d13a803337c5746839e557263d6b93, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -20
-      objectReference: {fileID: 0}
     - target: {fileID: 6629580704959067807, guid: 17d13a803337c5746839e557263d6b93, type: 3}
       propertyPath: m_Name
       value: SettingCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8858434457808380548, guid: 17d13a803337c5746839e557263d6b93, type: 3}
-      propertyPath: m_Name
-      value: InstructText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29372,7 +29375,7 @@ PrefabInstance:
       propertyPath: m_text
       value: "Nh\u1EA5n A/D ho\u1EB7c Home/End \u0111\u1EC3 di chuy\u1EC3n\nNh\u1EA5n
         Space \u0111\u1EC3 nh\u1EA3y, nh\u1EA5n 2 l\u1EA7n \u0111\u1EC3 nh\u1EA3y
-        \u0111\xF4i\nNh\u1EA5n J \u0111\u1EC3 t\u1EA1m d\u1EEBng"
+        \u0111\xF4i\nNh\u1EA5n Esc \u0111\u1EC3 t\u1EA1m d\u1EEBng"
       objectReference: {fileID: 0}
     - target: {fileID: 4943615883720553757, guid: 748be13cc4aed4b4e978969ff4ccb96b, type: 3}
       propertyPath: m_AnchoredPosition.y

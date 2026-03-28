@@ -4408,6 +4408,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 475002008}
     - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+      propertyPath: openShopButton
+      value: 
+      objectReference: {fileID: 720981344}
+    - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
       propertyPath: checkCanvases.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4508,6 +4512,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+--- !u!114 &720981344 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6223450467971739133, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+  m_PrefabInstance: {fileID: 720981343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &733689228
 GameObject:
   m_ObjectHideFlags: 0
@@ -5441,7 +5456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3566480622767453386, guid: c77c507a9f9b9e8478289efbff5e071b, type: 3}
       propertyPath: canvasPrefKey
-      value: Canvas_02
+      value: RewardCanvas_Level3
       objectReference: {fileID: 0}
     - target: {fileID: 4007455803309130834, guid: c77c507a9f9b9e8478289efbff5e071b, type: 3}
       propertyPath: m_Pivot.x
@@ -5547,6 +5562,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2b0bd431b4dcf344a84e95426aca7673, type: 3}
+    - target: {fileID: 5934164509617989317, guid: c77c507a9f9b9e8478289efbff5e071b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 6391861633943220711, guid: c77c507a9f9b9e8478289efbff5e071b, type: 3}
       propertyPath: 'canvasToEnable.Array.data[0]'
       value: 
@@ -5562,6 +5581,10 @@ PrefabInstance:
     - target: {fileID: 8279644654696509367, guid: c77c507a9f9b9e8478289efbff5e071b, type: 3}
       propertyPath: m_Name
       value: RewardCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8279644654696509367, guid: c77c507a9f9b9e8478289efbff5e071b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8529199361178610165, guid: c77c507a9f9b9e8478289efbff5e071b, type: 3}
       propertyPath: m_text
@@ -6564,9 +6587,17 @@ PrefabInstance:
       propertyPath: SceneName
       value: Level4
       objectReference: {fileID: 0}
+    - target: {fileID: 7214489016127906571, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
+      propertyPath: SceneName
+      value: Mode
+      objectReference: {fileID: 0}
     - target: {fileID: 7340791886583353645, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_Name
       value: GameWinCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340791886583353645, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_Pivot.x
@@ -6610,7 +6641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.00602
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6618,23 +6649,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -27.680418
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 14.44927
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8549097775301406523, guid: 56345ab39fe280b45be37b250dc9b11b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9775,6 +9806,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1451771423}
     m_Modifications:
+    - target: {fileID: 1107752286729300814, guid: 82fe99b880f876243b692ad76e56b4b7, type: 3}
+      propertyPath: enemyID
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3390662291448063348, guid: 82fe99b880f876243b692ad76e56b4b7, type: 3}
       propertyPath: m_Name
       value: Enermy 2
@@ -10010,6 +10045,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1451771423}
     m_Modifications:
+    - target: {fileID: 1132018041320348672, guid: 98386257f4fa01d46bdc2a36193e45de, type: 3}
+      propertyPath: enemyID
+      value: 101
+      objectReference: {fileID: 0}
     - target: {fileID: 2951815027032713231, guid: 98386257f4fa01d46bdc2a36193e45de, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.246123
