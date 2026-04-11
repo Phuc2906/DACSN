@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsEndGameShowing())
+        if (Input.GetKeyDown(KeyCode.J) && !IsEndGameShowing())
         {
             TogglePause();
         }

@@ -354,22 +354,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 320998921267554917, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 4288773700511801194}
-    - target: {fileID: 320998921267554917, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadSceneGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 320998921267554917, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LoadScene, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1641412976151636982, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_Name
-      value: InstructText
-      objectReference: {fileID: 0}
     - target: {fileID: 1708508756153760360, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -450,49 +434,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4148898460640523614, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148898460640523614, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148898460640523614, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224355733567496587, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_text
-      value: "Nh\u1EA5n A/D ho\u1EB7c Home/End \u0111\u1EC3 Di chuy\u1EC3n\n\nNh\u1EA5n
-        Space \u0111\u1EC3 nh\u1EA3y, nh\u1EA5n 2 l\u1EA7n \u0111\u1EC3 nh\u1EA3y
-        \u0111\xF4i\n\nNh\u1EA5n Z \u0111\u1EC3 b\u1EAFn\n\nNh\u1EA5n Esc \u0111\u1EC3
-        T\u1EA1m d\u1EEBng game \n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4333313309205183130, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 4333313309205183130, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 4333313309205183130, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 312
-      objectReference: {fileID: 0}
-    - target: {fileID: 4333313309205183130, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765478517366860649, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765478517366860649, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4808609259806487921, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -502,22 +443,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1410822984}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6710314434301119249, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
---- !u!114 &4288773700511801194 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6427584487535859472, guid: 14d553e91974cbf4b91e2cec1b0f0939, type: 3}
-  m_PrefabInstance: {fileID: 4288773700511801192}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c254429a60b6b4895c679b6016dee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7454357061444374423
 PrefabInstance:
   m_ObjectHideFlags: 0
