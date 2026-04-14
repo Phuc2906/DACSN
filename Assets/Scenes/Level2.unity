@@ -3071,6 +3071,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 636315917}
     - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+      propertyPath: compareSceneName
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+      propertyPath: currentSceneName
+      value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
       propertyPath: checkCanvases.Array.size
       value: 2
       objectReference: {fileID: 0}

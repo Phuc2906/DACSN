@@ -5,53 +5,52 @@ using System.Collections.Generic;
 
 public class Shop : MonoBehaviour
 {
-    [Header("Mở từ Game?")]
-    public bool openedFromGame = false;
+    [Header("Scene hiện tại")]
+    public string currentSceneName;
+    [Header("Scene so sánh")]
+    public string compareSceneName;
+    [Header("Scene muốn chuyển đến")]
+    public string targetSceneName;
 
-    [Header("Danh sách Canvas")]
-    public List<GameObject> checkCanvases = new List<GameObject>();
+    [Header("Pause")]
+    public bool savePauseState = false;
 
-    [Header("Button mở shop")] 
-    public Button openShopButton;
+    [Header("Canvases")]
+    public List<GameObject> lockCanvases = new List<GameObject>();
+
+    [Header("Button")] 
+    public Button loadButton;
 
     void Update() 
     {
-        if (openShopButton != null)
+        if (loadButton != null)
         {
-            openShopButton.interactable = !IsAnyCanvasActive();
+            loadButton.interactable = !IsAnyLockCanvasActive();
         }
     }
 
-    public void OpenShop()
+    public void LoadTargetScene()
     {
-        if (IsAnyCanvasActive())
+        if (IsAnyLockCanvasActive())
         {
-            return;
+            return; 
         }
 
-        PlayerPrefs.SetInt("OpenedFromGame", openedFromGame ? 1 : 0);
+        PlayerPrefs.SetString("LastScene", currentSceneName);
 
-        if (openedFromGame)
-        {
-            PlayerPrefs.SetString(
-                "LastScene",
-                SceneManager.GetActiveScene().name
-            );
-
-            PlayerMove player = Object.FindFirstObjectByType<PlayerMove>();
-            if (player != null)
-                player.SavePosition();
-        }
-
+        PlayerMove playerMove = FindObjectOfType<PlayerMove>();
+        if (playerMove != null)
+            playerMove.SavePosition();
         PlayerPrefs.Save();
-        SceneManager.LoadScene("Shop");
+
+        SceneManager.LoadScene(targetSceneName);
     }
 
-    private bool IsAnyCanvasActive()
+    bool IsAnyLockCanvasActive()
     {
-        foreach (GameObject canvas in checkCanvases)
+        foreach (var canvas in lockCanvases)
         {
-            if (canvas != null && canvas.activeSelf)
+            if (canvas != null && canvas.activeInHierarchy)
                 return true;
         }
         return false;

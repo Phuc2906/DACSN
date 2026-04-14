@@ -34,16 +34,16 @@ public class PlayerMove : MonoBehaviour
     {
         float horizontal = 0f;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.localScale = new Vector3(-trucx, trucy, 1);
-            horizontal = -1f;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.localScale = new Vector3(trucx, trucy, 1);
-            horizontal = 1f;
-        }
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+    {
+        transform.localScale = new Vector3(-trucx, trucy, 1);
+        horizontal = -1f;
+    }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+    {
+        transform.localScale = new Vector3(trucx, trucy, 1);
+        horizontal = 1f;
+    }
 
         rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
 

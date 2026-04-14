@@ -995,7 +995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17c101a6e4fad349be08ca217889014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultScene: MainMenu
 --- !u!114 &486219343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1041,8 +1040,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 486219342}
-        m_TargetAssemblyTypeName: BacktoMainMenu, Assembly-CSharp
-        m_MethodName: Back
+        m_TargetAssemblyTypeName: Return, Assembly-CSharp
+        m_MethodName: LoadSceneMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

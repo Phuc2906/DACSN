@@ -7534,6 +7534,14 @@ PrefabInstance:
       propertyPath: openShopButton
       value: 
       objectReference: {fileID: 1778810539}
+    - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+      propertyPath: compareSceneName
+      value: Level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141893196034686183, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
+      propertyPath: currentSceneName
+      value: Level4
+      objectReference: {fileID: 0}
     - target: {fileID: 5137194179866058854, guid: 2bcda25920eb5d84c9e7e03b85cb932b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
