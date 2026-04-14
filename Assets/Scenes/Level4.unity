@@ -7756,7 +7756,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1132018041320348672, guid: 98386257f4fa01d46bdc2a36193e45de, type: 3}
       propertyPath: enemyID
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2951815027032713231, guid: 98386257f4fa01d46bdc2a36193e45de, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7800,7 +7800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5022133421033207461, guid: 98386257f4fa01d46bdc2a36193e45de, type: 3}
       propertyPath: enemyID
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6449202009889691010, guid: 98386257f4fa01d46bdc2a36193e45de, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7812,7 +7812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878181370943117094, guid: 98386257f4fa01d46bdc2a36193e45de, type: 3}
       propertyPath: enemyID
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8796,7 +8796,7 @@ PrefabInstance:
     - target: {fileID: 4681644140602615858, guid: ce7d3bcef21aba94dbe969318eaf0dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1284335933226029031}
+      objectReference: {fileID: 0}
     - target: {fileID: 4681644140602615858, guid: ce7d3bcef21aba94dbe969318eaf0dfc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
@@ -8814,17 +8814,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce7d3bcef21aba94dbe969318eaf0dfc, type: 3}
---- !u!114 &1284335933226029031 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3328853087222893033, guid: ce7d3bcef21aba94dbe969318eaf0dfc, type: 3}
-  m_PrefabInstance: {fileID: 1284335933226029029}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c5aa513bf49184f854386fb1e6d559, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3967077689850564466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9044,7 +9033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3973565917471873156, guid: 6602bfc419ee91d4bb16ee16865ce274, type: 3}
       propertyPath: cost
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3973565917471873156, guid: 6602bfc419ee91d4bb16ee16865ce274, type: 3}
       propertyPath: rentID
