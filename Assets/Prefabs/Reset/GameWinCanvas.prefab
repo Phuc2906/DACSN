@@ -298,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1368235416643083585
 RectTransform:
   m_ObjectHideFlags: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "X\xF3a d\u1EEF li\u1EC7u"
+  m_text: "Quay l\u1EA1i\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -893,9 +893,9 @@ GameObject:
   - component: {fileID: 5272156088114194176}
   - component: {fileID: 1073159056446211484}
   - component: {fileID: 4681644140602615858}
-  - component: {fileID: 1298980296952159711}
+  - component: {fileID: 3328853087222893033}
   m_Layer: 5
-  m_Name: Reset
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1003,9 +1003,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1298980296952159711}
-        m_TargetAssemblyTypeName: ResetGame, Assembly-CSharp
-        m_MethodName: LoadResetGame
+      - m_Target: {fileID: 3328853087222893033}
+        m_TargetAssemblyTypeName: LoadSceneGame, Assembly-CSharp
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1015,7 +1015,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1298980296952159711
+--- !u!114 &3328853087222893033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1024,10 +1024,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6261687126599290380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32a3e21bfc058a84990a836f4fc940e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 87c5aa513bf49184f854386fb1e6d559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Canvas_A: {fileID: 0}
+  SceneName: Mode
 --- !u!1 &7428087950339666483
 GameObject:
   m_ObjectHideFlags: 0
