@@ -4,7 +4,7 @@ public class CheckPoint : MonoBehaviour
 {
     public GameObject checkpointCanvas;
 
-    private string checkpointKey = "Checkpoint"; 
+    public string checkpointKey = "Checkpoint"; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {

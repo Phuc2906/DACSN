@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     [Header("Auto Aim (Chỉ lúc bắn)")]
     public float detectRange = 6f;
     public LayerMask enemyLayer;
+    public LayerMask enemybossLayer;
 
     [Header("Aim")]
     public float aimYMultiplier = 1f;
@@ -55,11 +56,13 @@ public class Bullet : MonoBehaviour
 
     Transform FindNearestEnemy()
     {
+        LayerMask combinedLayer = enemyLayer | enemybossLayer;
+
         Collider2D[] hits = Physics2D.OverlapCircleAll(
-            transform.position,
-            detectRange,
-            enemyLayer
-        );
+        transform.position,
+        detectRange,
+        combinedLayer
+    );
 
         if (hits.Length == 0) return null;
 
@@ -81,7 +84,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("EnemyBoss"))
         {
             EnemyHealth enemy = collision.GetComponent<EnemyHealth>();
             if (enemy != null)

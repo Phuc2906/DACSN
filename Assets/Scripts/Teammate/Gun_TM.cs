@@ -8,6 +8,7 @@ public class Gun_TM : MonoBehaviour
     public float fireRate = 0.5f;
     public float detectionRange = 8f;
     public LayerMask enemyLayer;
+    public LayerMask enemybossLayer;
 
     private float fireTimer = 0f;
     private SpriteRenderer playerSprite;
@@ -56,13 +57,13 @@ public class Gun_TM : MonoBehaviour
 
     Transform FindNearestEnemy()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(firePoint.position, detectionRange, enemyLayer);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(firePoint.position, detectionRange, enemyLayer | enemybossLayer);
         Transform nearest = null;
         float minDist = Mathf.Infinity;
 
         foreach (Collider2D hit in hits)
         {
-            if (hit.CompareTag("Enemy"))
+            if (hit.CompareTag("Enemy") || hit.CompareTag("EnemyBoss"))
             {
                 float dist = Vector2.Distance(firePoint.position, hit.transform.position);
                 if (dist < minDist)

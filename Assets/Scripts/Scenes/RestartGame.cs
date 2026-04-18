@@ -12,6 +12,12 @@ public class RestartGame : MonoBehaviour
     [Header("Tổng số Enemy ban đầu")]
     public int totalEnemies = 20;
 
+    [Header("Enemy Groups")]
+    public int totalEnemyGroups = 5;
+
+    [Header("Total OpenGO")]
+    public int totalOpenGO = 10;
+
     [Header("TeammateMove Script")]
     public TeammateMove teammateMove; 
 
@@ -25,6 +31,16 @@ public class RestartGame : MonoBehaviour
         for (int i = 0; i < totalHealthItems; i++)
         {
             PlayerPrefs.DeleteKey("ItemHealth_" + i);
+        }
+
+        for (int i = 0; i < totalEnemyGroups; i++)
+        {
+            PlayerPrefs.DeleteKey("EnemyGroup_" + i);
+        }
+
+        for (int i = 0; i < totalOpenGO; i++)
+        {
+            PlayerPrefs.DeleteKey("OpenGO_" + i);
         }
 
         for (int i = 0; i < totalEnemies; i++)

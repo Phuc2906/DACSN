@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lunar Shards_0: 1595707362282169113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

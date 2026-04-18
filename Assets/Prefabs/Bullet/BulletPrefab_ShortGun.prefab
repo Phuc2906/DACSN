@@ -110,6 +110,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  enemybossLayer:
+    serializedVersion: 2
+    m_Bits: 512
   aimYMultiplier: 1
 --- !u!61 &9122241113187983319
 BoxCollider2D:
