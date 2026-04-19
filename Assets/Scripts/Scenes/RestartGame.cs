@@ -75,6 +75,7 @@ public class RestartGame : MonoBehaviour
         PlayerPrefs.DeleteKey("BossDestroyed_1");
         PlayerPrefs.DeleteKey("EnemyIndex");
         PlayerPrefs.DeleteKey("Shadow");
+        PlayerPrefs.DeleteKey("BossCanvas");
 
         if (teammateMove != null)
         {
