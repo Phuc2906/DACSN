@@ -8,6 +8,13 @@ public class LoadSceneGame : MonoBehaviour
     {
         PlayerPrefs.DeleteKey("Checkpoint");
         PlayerPrefs.DeleteKey("Checkpoint_02");
+        PlayerPrefs.DeleteKey("Checkpoint_03");
+        PlayerPrefs.DeleteKey("Checkpoint_04");
+        PlayerPrefs.DeleteKey("Checkpoint_05");
+        PlayerPrefs.DeleteKey("Checkpoint_06");
+        PlayerPrefs.DeleteKey("Checkpoint_07");
+        PlayerPrefs.DeleteKey("Checkpoint_08");
+        PlayerPrefs.DeleteKey("Checkpoint_09");
         PlayerPrefs.DeleteKey("SavedX");
         PlayerPrefs.DeleteKey("SavedY");
         PlayerPrefs.DeleteKey("SavedZ");

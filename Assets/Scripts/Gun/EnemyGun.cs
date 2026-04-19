@@ -57,7 +57,14 @@ public class EnemyGun : MonoBehaviour
         players.Clear();
 
         GameObject[] foundPlayers = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] foundPlayers2 = GameObject.FindGameObjectsWithTag("Teammate");
         foreach (GameObject p in foundPlayers)
+        {
+            if (p.activeInHierarchy)
+                players.Add(p.transform);
+        }
+
+        foreach (GameObject p in foundPlayers2)
         {
             if (p.activeInHierarchy)
                 players.Add(p.transform);
